@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>监控</title>
+    <title>监控平台</title>
     <script src="js/jquery-1.8.0.js"></script>
    <!--<script language="JavaScript">
         setTimeout(function(){location.reload()},1000); //指定1秒刷新一次
@@ -14,16 +14,16 @@
         var num1=result1*0.001+0.5;
       /* setTimeout(function(){location.reload()},1000);*/
     </script>-->
-    <script language="javascript">
+    <!--<script language="javascript">
        for (var i=0;i<20;i++) {
            var num2=i;
        }
     </script>
     <script language="javascript">
-        for (var i=20;i>0;i--) {
+        for (var i=20;i>0;i&#45;&#45;) {
             var num3=i+1000;
         }
-    </script>
+    </script>-->
    <!-- <script language="javascript">
         var a="0";
         var b="2";
@@ -50,6 +50,8 @@
         padding:40px;
         margin-left:900px;
         margin-top:200px;
+        position:fixed;
+
     }
     #div2{
         width:200px;
@@ -82,18 +84,26 @@
     }
     </script>
     </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   提升度: <a><span id="span1">0</span>
+   提升度:<a id="setnum07"><script>
+            setInterval(displayNum3,1000);
+            function displayNum3() {
+                document.getElementById("setnum07").innerHTML = (Math.random() *(20 - 0)+0 ).toFixed(2)+ ' m';
+            }
+        </script>
+        </a>
+
+        <!--<a><span id="span1">0</span>
         <script>
             var num1 = 0;
             var p = setInterval(function (){
                 num1++;
                 var span1 = document.getElementById("span1");
-                span1.innerText = num1.toFixed(2);
-                if(num1==20){
+                span1.innerText = (num1*0.01).toFixed(2);
+                if(num1==2000){
                     clearInterval(p);
                 }
-            },1000);
-        </script>m</a>
+            },10);
+        </script>m</a>-->
         <!--
         <a id="show" ><script>
             var num = 1;
@@ -108,7 +118,15 @@
         }, )
         </script></a>-->
 </p>
-<p>当前气压值:<a><span id="span2">0</span>
+<p>当前温度:
+    <a id="setnum06"><script>
+        setInterval(displayNum3,1000);
+        function displayNum3() {
+            document.getElementById("setnum06").innerHTML = (Math.random() *(33  -31)+31).toFixed(1)+ ' ℃';
+        }
+    </script>
+    </a>
+    <!--<a><span id="span2">0</span>
     <script>
         var num = 0;
         var t = setInterval(function (){
@@ -119,7 +137,7 @@
                 clearInterval(t);
             }
         },1000);
-    </script>mbra</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </script>mbra</a>-->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
    加速度:<a id="setnum02"><script>
         setInterval(displayNum3,1000);
         function displayNum3() {
@@ -152,7 +170,7 @@
 </p>
 </div>
 <div id="div2">
-<p id="p2">监控图片</p>
+<p id="p2">监控画面</p>
     <embed src="QQ视频20190713191236.mp4" width="400" height="220"/>
 </div>
 </body>
